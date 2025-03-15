@@ -1,12 +1,6 @@
 [package]
-name = "stealth_scanner"
+name = "rustscan-wrapper"
 version = "0.1.0"
-edition = "2021"
+edition = "2018"
 
 [dependencies]
-tokio = { version = "1.0", features = ["full"] }
-rand = "0.8.5"
-pnet = "0.31.0"
-futures = "0.3.21"
-ipnetwork = "0.20.0"
-serde = { version = "1.0", features = ["derive"] }
