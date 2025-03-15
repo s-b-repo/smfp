@@ -101,7 +101,9 @@ async fn main() {
         let ip = random_public_ip();
         let ip_str = ip.to_string();
 
+        // Spawn a task for each scan
         tokio::spawn(async move {
+            println!("Scanning IP: {}", ip_str);
             match scan_with_rustscan(&ip_str).await {
                 Ok(open_ports) => {
                     if !open_ports.is_empty() {
@@ -109,6 +111,8 @@ async fn main() {
                         if let Err(e) = save_result(ip, &open_ports).await {
                             eprintln!("Error saving result: {}", e);
                         }
+                    } else {
+                        println!("No open ports found on {}", ip_str);
                     }
                 }
                 Err(e) => {
@@ -120,6 +124,6 @@ async fn main() {
         });
 
         // A brief delay to avoid overloading the system.
-        sleep(Duration::from_millis(200)).await;
+        sleep(Duration::from_millis(100)).await;
     }
 }
