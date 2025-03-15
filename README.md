@@ -25,4 +25,4 @@
 
 # Run with root privileges (required for raw sockets)
 
-    sudo ./target/release/stealth_scanner
+        ./target/release/whitehat-scanner
