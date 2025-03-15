@@ -1,6 +1,8 @@
 [package]
-name = "rustscan-wrapper"
+name = "whitehat-scanner"
 version = "0.1.0"
 edition = "2018"
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+rand = "0.8"
