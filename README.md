@@ -1,7 +1,5 @@
 
 1. Install Dependencies (Kali Linux):
-bash
-Copy
 
 sudo apt update && sudo apt install -y build-essential libpcap-dev cmake
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
